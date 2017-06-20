@@ -7,7 +7,7 @@ import (
 )
 
 var RootCmd = &cobra.Command{
-    Use:   "go-keisan",
+    Use:   "hello-glide",
     Short: "This tool is pretty cool.",
     Long:  "This tool is a great convenience.",
     Run: func(cmd *cobra.Command, args []string) {
