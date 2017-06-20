@@ -33,10 +33,20 @@ var helloCmd = &cobra.Command{
     },
 }
 
+var goodbyeCmd = &cobra.Command{
+    Use:   "goodbye",
+    Short: "goodbye someone",
+    Long:  "say goodbye to.",
+    Run: func(cmd *cobra.Command, args []string) {
+        fmt.Println("goodbye " + args[0])
+    },
+}
+
 func main() {
     cobra.OnInitialize()
     RootCmd.AddCommand(versionCmd)
     RootCmd.AddCommand(helloCmd)
+    RootCmd.AddCommand(goodbyeCmd)
     if err := RootCmd.Execute(); err != nil {
         fmt.Println(err)
         os.Exit(-1)
